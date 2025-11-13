@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ASOBI - Encuentros Deportivos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Vinculamos nuestro CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- FullCalendar CSS -->
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+
+<!-- FullCalendar JS -->
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+
+</head>
+
+<body>
+
+  <header class="hero-slider">
+  <!-- Slides de fondo -->
+  <div class="slide active" style="background-image: url('https://www.lavanguardia.com/files/article_main_microformat/uploads/2017/05/31/5fa3ca87cd437.jpeg');"></div>
+  <div class="slide" style="background-image: url('https://files.visitbogota.co/sites/default/files/2025-04/0106%20%281%29.jpg');"></div>
+  <div class="slide" style="background-image: url('https://s0.wklcdn.com/image_383/11512895/113478893/72967467.400x300.jpg');"></div>
+
+  <!-- Overlay oscuro -->
+  <div class="overlay"></div>
+
+  <!-- Contenido del encabezado -->
+  <div class="hero-content text-center">
+    <h1 class="hero-title">ASOBI</h1>
+    <p class="hero-subtitle">Conecta. Entrena. Comparte tu pasión por el deporte.</p>
+    <a href="#registro" class="btn btn-outline-light btn-lg mt-3">Únete a la comunidad</a>
+  </div>
+</header>
+
+
+
+  <nav class="bg-light text-center p-3">
+    <a class="mx-3" href="#inicio">Inicio</a>
+    <a class="mx-3" href="#galeria">Galería</a>
+    <a class="mx-3" href="#eventos">Eventos</a>
+    <a class="mx-3" href="#contacto">Contacto</a>
+  </nav>
+
+  <main class="container my-5">
+
+    <!-- Inicio -->
+    <section id="inicio" class="my-5">
+  <h2 class="text-center mb-4">¿Qué es ASOBI?</h2>
+
+  <p class="text-center lead">
+    ASOBI es una plataforma que conecta a personas apasionadas por el deporte para organizar y participar en encuentros deportivos. 
+    Aquí no importa tu experiencia, solo tus ganas de moverte.
+  </p>
+
+  <div class="row text-center mt-4">
+
+    <div class="col-md-4">
+      <div class="card shadow p-3 border-0">
+        <h4>Conecta con deportistas</h4>
+        <p>Encuentra personas con tus mismas metas deportivas en tu ciudad.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow p-3 border-0">
+        <h4>Crea y gestiona eventos</h4>
+        <p>Organiza entrenamientos, partidos, retos o caminatas con un solo clic.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow p-3 border-0">
+        <h4>Mide tu progreso</h4>
+        <p>Comparte tus avances, fotos, logros y motívate junto con la comunidad.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <blockquote class="mt-5 text-center">
+    <em>“El deporte tiene el poder de cambiar el mundo.”</em> – Nelson Mandela
+  </blockquote>
+
+  <div class="text-center mt-4">
+    <a href="#registro" class="btn btn-primary btn-lg">Únete a la comunidad</a>
+  </div>
+</section>
+
+
+    <!-- Galería -->
+    <section id="galeria" class="my-5">
+      <h2>Galería deportiva</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://www.shutterstock.com/image-photo/kettlebell-workout-fitness-class-gym-600nw-2225178691.jpg" class="img-fluid rounded mb-3">
+        </div>
+        <div class="col-md-4">
+          <img src="https://www.shutterstock.com/image-photo/friends-group-high-five-outdoor-600nw-2460004047.jpg" class="img-fluid rounded mb-3">
+        </div>
+        <div class="col-md-4">
+          <img src="https://st4.depositphotos.com/17500018/27630/i/450/depositphotos_276308128-stock-photo-friends-playing-soccer-stadium-women.jpg" class="img-fluid rounded mb-3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Registro -->
+    <section id="registro" class="my-5">
+      <h2>Registro de Usuario</h2>
+      <form id="formRegistro" class="bg-light p-3 rounded">
+        <input type="text" id="nombreRegistro" class="form-control mb-2" placeholder="Nombre">
+        <input type="email" id="correoRegistro" class="form-control mb-2" placeholder="Correo">
+        <input type="password" id="passwordRegistro" class="form-control mb-2" placeholder="Contraseña">
+        <button type="button" class="btn btn-primary w-100" onclick="registrarUsuario()">Registrarse</button>
+      </form>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="my-5">
+      <h2>Inicio de Sesión</h2>
+      <form id="formLogin" class="bg-light p-3 rounded">
+        <input type="email" id="correoLogin" class="form-control mb-2" placeholder="Correo">
+        <input type="password" id="passwordLogin" class="form-control mb-2" placeholder="Contraseña">
+        <button type="button" class="btn btn-success w-100" onclick="iniciarSesion()">Iniciar Sesión</button>
+      </form>
+    </section>
+
+    <!-- Eventos -->
+    <section id="eventos" class="my-5">
+      <h2>Gestión de Eventos</h2>
+      <form id="formEvento" class="bg-light p-3 rounded mb-4">
+        <input type="text" id="nombreEvento" class="form-control mb-2" placeholder="Nombre del evento">
+        <input type="date" id="fechaEvento" class="form-control mb-2">
+        <input type="text" id="lugarEvento" class="form-control mb-2" placeholder="Lugar">
+        <button type="button" class="btn btn-warning w-100" onclick="crearEvento()">Crear evento</button>
+      </form>
+
+      <h3>Buscar evento</h3>
+      <input type="text" id="busqueda" class="form-control mb-3" placeholder="Buscar..." oninput="buscarEvento()">
+
+      <ul id="listaEventos" class="list-group"></ul>
+
+      <h3>Mapa de eventos</h3>
+<div id="mapaEventos" style="height: 400px; width: 100%; margin-bottom: 20px;"></div>
+
+<h3>Calendario de eventos</h3>
+<div id="calendarioEventos"></div>
+
+
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="my-5">
+      <h2>Contacto</h2>
+      <form class="p-3 bg-light rounded">
+        <input type="text" class="form-control mb-2" placeholder="Tu nombre">
+        <input type="email" class="form-control mb-2" placeholder="Tu correo">
+        <textarea class="form-control mb-2" placeholder="Mensaje"></textarea>
+        <button class="btn btn-primary w-100">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer text-white text-center p-3">
+    © ASOBI
+  </footer>
+
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Unheard_Music_Concepts/Metal_Instrumentals/Unheard_Music_Concepts_-09-_Metal_Groove.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Vinculación del JavaScript -->
+  <script src="script.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ASOBI - Encuentros Deportivos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+</head>
+<body>
+  <!-- Aquí tu header, nav, secciones de registro, login, eventos, mapa y calendario -->
+
+  <div id="mapaEventos" style="height:400px;"></div>
+  <div id="calendarioEventos"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+  <script src="script.js"></script>
+</body>
+</html>

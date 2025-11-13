@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba FullCalendar</title>
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+</head>
+<body>
+
+<div id="calendario" style="max-width: 900px; margin: 40px auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let calendarEl = document.getElementById('calendario');
+  let calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    events: [
+      { title: 'Entrenamiento Fútbol', start: '2025-11-15' },
+      { title: 'Caminata Asobi', start: '2025-11-18' }
+    ]
+  });
+  calendar.render();
+});
+</script>
+
+</body>
+</html>

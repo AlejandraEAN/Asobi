@@ -1,0 +1,128 @@
+/* Fuentes y body */
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* HERO CON SLIDER DE IMÁGENES */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slides de fondo */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Overlay oscuro */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+/* Contenido del header */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+}
+
+/* Tipografía */
+.hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #ffcc00;
+  text-shadow: 4px 4px 10px black;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+/* Botón */
+.hero-content .btn {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Tarjetas de información del inicio */
+#inicio .card {
+  border-radius: 20px;
+  background: #ffffffdd;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#inicio .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Galería */
+#galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+}
+
+/* Formulario de registro y login */
+form input, form textarea {
+  border-radius: 10px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#mapaEventos {
+  height: 400px;
+  width: 100%;
+}
+
+#calendarioEventos {
+  height: 500px;
+  width: 100%;
+}
